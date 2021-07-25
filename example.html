@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h1>Android-WebView-Friendly HTML Select Tag</h1>
+        
+        <div id="test" style="float: left;"></div>
+        
+        <button id="btn" style="cursor:pointer;float: left;">Click Me</button>
+        
+        <script src="/js/androidSelector.js"></script>
+        
+        <script>
+
+            // Add our select options
+            let options = [
+                {name: "Option 1", value: "Value 1"},
+                {name: "Option 2", value: "Value 2"},
+                {name: "Option 3", value: "Value 3"},
+                {name: "Option 4", value: "Value 4"},
+                {name: "Option 5", value: "Value 5"},
+                {name: "Option 6", value: "Value 6"},
+                {name: "Option 7", value: "Value 7"}
+            ];
+
+            // Add custom css classes
+            let style = {wrapper: ['test_class'], options: ['test_class'], option: ['test_class']}
+
+            // Define our onSelect callback
+            let onSelect = (value) => {
+                alert("Selected: " + value);
+            }
+
+            // Instantiate the class instance
+            let s = new AndroidSelect(
+                "#test",
+                options,
+                style = style,
+                onSelect = onSelect
+            )
+
+            // Get the value from the class instance, externally
+            $('#btn').on('click', () => {
+                alert("Selected: " + s.value);
+            })
+
+        </script>
+    </body>
+</html>
