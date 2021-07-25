@@ -1,8 +1,5 @@
-// Add the core styling to DOM
-$("head").prepend("<link rel='stylesheet' href='/src/androidWebViewSelect_core.css' type='text/css'>");
-
-// Add the core styling to DOM (from github) - will fullfill if not existing locally or will overwrite the prior styling
-$("head").prepend("<link rel='stylesheet' href='https://raw.githubusercontent.com/hostinfodev/Android-WebView-Select/main/src/androidWebViewSelect_core.css' type='text/css'>");
+// Add the core styling to DOM (from github)
+$("head").prepend("<link rel='stylesheet' href='./src/androidWebViewSelect_core.css' type='text/css'>");
 
 // AndroidSelect Class Instance
 class AndroidSelect
