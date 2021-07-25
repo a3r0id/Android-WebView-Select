@@ -1,5 +1,6 @@
 // Add the core styling to DOM
-const andSelCoreCSS = `
+$("head").prepend(`
+<style>
 /* ANDROID-SELECT CORE STYLING */
 
 .__android_selector___wrapper{
@@ -27,9 +28,8 @@ const andSelCoreCSS = `
 .__android_selector___option_highlight:hover{
     background-color: #3297fd;
 }
-`;
-
-$("head").prepend(`<style>\n${andSelCoreCSS}\n</style>`);
+</style>
+`);
 
 // AndroidSelect Class Instance
 class AndroidSelect {
