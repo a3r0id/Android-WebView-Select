@@ -1,5 +1,35 @@
-// Add the core styling to DOM (from github)
-$("head").prepend("<link rel='stylesheet' href='./src/androidWebViewSelect_core.css' type='text/css'>");
+// Add the core styling to DOM
+const andSelCoreCSS = `
+/* ANDROID-SELECT CORE STYLING */
+
+.__android_selector___wrapper{
+    width:      125px;
+    height:     25px;
+}
+
+.__android_selector___wrapper:hover{
+    cursor:     pointer;
+}
+
+.__android_selector___options{
+    height:     100%;
+    z-index:    100;
+    position: relative
+}
+
+.__android_selector___option{
+    border:     1px solid rgb(130, 130, 130);
+    text-align: center;
+    z-index:    100;
+    background-color: white;
+}
+
+.__android_selector___option_highlight:hover{
+    background-color: #3297fd;
+}
+`;
+
+$("head").prepend(`<style>\n${andSelCoreCSS}\n</style>`);
 
 // AndroidSelect Class Instance
 class AndroidSelect
