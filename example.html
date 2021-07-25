@@ -1,34 +1,28 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
+        <title>Android-WebView-Friendly HTML Select Tag</title>
+        <meta name="description" content="Android-WebView-Friendly HTML Select Tag">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hostinfodev/Android-WebView-Select@main/dist/androidWebViewSelect.min.js"></script>
     </head>
     <body>
 
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
         <h1>Android-WebView-Friendly HTML Select Tag</h1>
-        
+
+        <!--Our anchor element-->
         <div id="test" style="float: left;"></div>
         
+        <!--Button to demonstrate how we can access the current selected value, externally-->
         <button id="btn" style="cursor:pointer;float: left;">Click Me</button>
         
-        <script src="./src/androidWebViewSelect.js"></script>
-        
+        <!--INITIALIZE OUR SELECT-->
         <script>
+
+            var ourSelectObject;
 
             // Add our select options
             let options = [
@@ -53,7 +47,7 @@
             }
 
             // Instantiate the class instance
-            let s = new AndroidSelect(
+            ourSelectObject = new AndroidSelect(
                 "#test",
                 options,
                 style = style,
@@ -62,7 +56,7 @@
 
             // Get the value from the class instance, externally
             $('#btn').on('click', () => {
-                alert("Selected: " + s.value);
+                alert("Selected: " + ourSelectObject.value);
             })
 
         </script>

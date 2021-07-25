@@ -36,9 +36,15 @@ class AndroidSelect {
     constructor(jQueryElementSelector, selectOptions, style = {
         wrapper: [],
         options: [],
-        option:  []
+        option: []
     }, onSelect = (value) => {
-        /*alert(value)*/ }) {
+        /*alert(value)*/
+    }) {
+
+        if (!window.jQuery) {
+            alert("Android-WebView-Select requires jQuery!")
+            return;
+        }
 
         // jQueryElementSelector -> STRING
         // selectOptions         -> OBJECT
