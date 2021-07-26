@@ -1,15 +1,13 @@
 # Android-WebView-Select
  An Android WebView-Friendly select pseudo-tag, based on the default HTML select tag that is interpreted based on OS which does NOT work on Android WebView, this is a workaround.
 
-
 > IMPORTANT: Android-WebView-Select requires jQuery!
-
 
 # CDN
 Place this in your head tag.
 ```html
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hostinfodev/Android-WebView-Select@main/dist/androidWebViewSelect.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hostinfodev/Android-WebView-Select@main/dists/0.0.2/androidWebViewSelect.min.js"></script>
 ```
 
 # Example
@@ -23,7 +21,7 @@ Place this in your head tag.
         <meta name="description" content="Android-WebView-Friendly HTML Select Tag">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hostinfodev/Android-WebView-Select@main/dist/androidWebViewSelect.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hostinfodev/Android-WebView-Select@main/dists/0.0.2/androidWebViewSelect.min.js"></script>
     </head>
     <body>
 
