@@ -26,3 +26,7 @@
 .__android_selector___option_highlight:hover{
     background-color: #3297fd;
 }
+
+.__android_selector___option_disabled:hover{
+    cursor: not-allowed;
+}

@@ -27,6 +27,10 @@ const andSelCoreCSS = `
 .__android_selector___option_highlight:hover{
     background-color: #3297fd;
 }
+
+.__android_selector___option_disabled:hover{
+    cursor: not-allowed;
+}
 `;
 
 $("head").prepend(`<style>\n${andSelCoreCSS}\n</style>`);
@@ -64,11 +68,25 @@ class AndroidSelect {
         let options = []
         let optBuffer = ""
         for (let option of selectOptions) {
+            let auxillaryClasses = "";
             let id = Math.random().toString().replace("0.", "")
-            optBuffer += `<div class="__android_selector___option __android_selector___option_highlight ${style.option.join(' ')}" android_select_parent_node="${this.id}" id="__android_select_option_${id}" android_select_value="${option.value}">${option.name}</div>\n`
+            let disabled = "";
+            let isDisabled = false;
+            if ('disabled' in option) {
+                if (option.disabled) {
+                    disabled = "disabled disabled=\"disabled\"";
+                    auxillaryClasses += " __android_selector___option_disabled";
+                    isDisabled = true;
+                }
+            }
+            optBuffer += `<div class="__android_selector___option __android_selector___option_highlight ${style.option.join(' ')}${auxillaryClasses}" android_select_parent_node="${this.id}" id="__android_select_option_${id}" android_select_value="${option.value}" ${disabled}>${option.name}</div>\n`
+
+            console.log(optBuffer)
+
             options.push({
                 name: option.name,
                 value: option.value,
+                disabled: isDisabled,
                 id: id
             })
         }
@@ -138,9 +156,8 @@ class AndroidSelect {
                     $('.__android_selector___options').hide()
                 } else {
                     // If the click/tap target was in fact an android select element the process the click/tap
-                    if (e.target.id.includes("android_select_option_")) {
+                    if (e.target.id.includes("android_select_option_") && !($('#' + e.target.id).attr('disabled') == "disabled")) {
                         // If target was an option:
-
                         // Get values from the target option's attributes
                         let value = $(e.target).attr("android_select_value");
                         let name = $(e.target).html();

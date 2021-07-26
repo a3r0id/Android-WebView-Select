@@ -7,7 +7,7 @@
         <meta name="description" content="Android-WebView-Friendly HTML Select Tag">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hostinfodev/Android-WebView-Select@main/dist/androidWebViewSelect.min.js"></script>
+        <script type="text/javascript" src="/src/androidWebViewSelect.js"></script>
     </head>
     <body>
 
@@ -22,13 +22,11 @@
         <!--INITIALIZE OUR SELECT-->
         <script>
 
-            var ourSelectObject;
-
             // Add our select options
             let options = [
                 {name: "Option 1", value: "Value 1"},
                 {name: "Option 2", value: "Value 2"},
-                {name: "Option 3", value: "Value 3"},
+                {name: "Option 3", value: "Value 3", disabled: true},
                 {name: "Option 4", value: "Value 4"},
                 {name: "Option 5", value: "Value 5"},
                 {name: "Option 6", value: "Value 6"},
@@ -47,6 +45,7 @@
             }
 
             // Instantiate the class instance
+            var ourSelectObject;
             ourSelectObject = new AndroidSelect(
                 "#test",
                 options,
